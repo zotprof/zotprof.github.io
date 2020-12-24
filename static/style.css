@@ -1,0 +1,372 @@
+html {
+    width:100%;
+    height:100%;
+}
+
+/* body styling */
+
+body {
+    width:100%;
+    height:100%;
+    background:#fff;
+    font-family:'Lato', sans-serif;
+}
+
+/* title styling */
+
+#title {
+    width:50%;
+    margin:1vw auto;
+    text-align:center;
+    font-size:5vw;
+    color:#466ec5;
+}
+
+#title a:hover {text-decoration:none}
+
+/* searchbar and plus button styling */
+
+#search {
+    width:50%;
+    margin:1vw auto;
+}
+
+input#searchbar {
+    width:45vw;
+    outline:none;
+    border:none;
+    border-bottom:5px solid #466ec5;
+    padding:0.5vw;
+    transition:0.3s ease-in-out;
+    -webkit-transition:0.3s ease-in-out;
+    -moz-transition:0.3s ease-in-out;
+    -ms-transition:0.3s ease-in-out;
+    -o-transition:0.3s ease-in-out;
+}
+
+input#searchbar:focus {
+    border-color:#e7cb4d;
+}
+
+#search:focus #suggest {
+    height:auto;
+}
+
+button#searchSubmit {
+    border:none;
+    display:inline-block;
+    font-size:1.5vw;
+    top:0.2vw;
+    color:#466ec5;
+    position:relative;
+    background-color:rgba(0,0,0,0);
+}
+
+button#searchSubmit:hover {
+    color:#e7cb4d;
+}
+
+/* 
+    professor cards styling
+    div containing cards = #cards
+    individual cards = .profcard
+*/
+
+#cards {
+    width:81vw;
+    padding:2vw;
+    margin:2vw auto;
+    text-align:center;
+}
+
+.profcard {
+    display:inline-block;
+    float: left;
+    width:23vw;
+    padding:2vw;
+    margin:1vw;
+    border:1px solid #466ec5;
+    border-radius:5%;
+}
+
+/* professor name */
+.profName {
+    font-weight:bold;
+    font-size:1.5vw;
+    text-align:left;
+    border-bottom:5px solid #e7cb4d;
+    margin-bottom:1vw;
+}
+
+/* professor class selection and display */
+.profClass {
+    width:100%;
+    display:block;
+}
+
+select#class {
+    margin-left:1vw;
+    text-align:left;
+}
+
+/* button styling for selecting course, deleting a card, and clearing all cards */
+button#selectCourse, button#delete, button#clear-all {
+    outline:none;
+    border:none;
+    background:#466ec5;
+    color:#fff;
+    border-radius:3px;
+    z-index:9;
+}
+
+button#infoButton:hover, button#clear-all:hover, button#delete:hover, button#selectCourse:hover {
+    background: #e7cb4d;
+}
+
+button#delete {
+    float:right;
+}
+
+button#clear-all {
+    margin-top:1vw;
+    float:right;
+}
+
+/* styling quality and difficulty scores */
+.quality, .difficulty {
+    display:inline-block;
+    width:6vw;
+    text-align:center;
+    padding:1vw 2vw 1vw 0;
+    font-size:1.5vw;
+    font-weight:bold;
+    margin-bottom:2vw;
+}
+
+.difficulty {
+    border-left:5px solid #e7cb4d;
+    padding:1vw 0vw 1vw 2vw;
+}
+
+.quality:before, .difficulty:before, .quality:after, .difficulty:after {
+    content:'/5';
+    font-size:1vw;
+    width:6vw;
+    display:block;
+    position:absolute;
+    margin:2vw auto;
+    font-weight:normal;
+    padding-right:2vw;
+}
+
+.quality:after {content:'QUALITY';}
+.difficulty:after {content:'DIFFICULTY';padding:0;margin-left:-0.75vw;}
+
+.grade {
+    width:15vw;
+    margin:1vw auto 0;
+    font-size:1.5vw;
+    font-weight:bold;
+}
+
+.grade:before {
+    content:'MOST RECEIVED GRADE: ';
+    display:block;
+    font-weight:normal;
+    font-size:1vw;
+    border-top:5px solid #e7cb4d;
+    padding-top:1vw;
+}
+
+/* styling information button (question mark button) and information/instructions box */
+
+#icon {
+    position:fixed;
+    left:2vw;
+    top:2vw;
+    width:4vw;
+    height:4vw;
+    overflow-y:hidden;
+}
+
+button#infoButton {
+    outline:none;
+    border:none;
+    background:#466ec5;
+    color:#fff;
+    border-radius:100%;
+    width:2vw;
+    height:2vw;
+    line-height:2vw;
+    text-align:center;
+}
+
+#info {
+    display:none;
+    background:#466ec5;
+    color:#fff;
+    padding:3vw;
+    position:absolute;
+    width:50vw;
+    left:22vw;
+    z-index:999;
+}
+
+#clear {
+    width:20vw;
+    margin:auto;
+    text-align:right;
+}
+
+/* styling for responsiveness at screen sizes under 1000px wide*/
+@media only screen and (max-width: 1000px) {
+
+    #title {
+        font-size:10vw;
+    }
+
+    #icon {
+        left:5vw;
+        top:5vw;
+    }
+
+    button#infoButton {
+        width:4vw;
+        height:4vw;
+        line-height:4vw;
+    }
+
+    #info {
+        width:80vw;
+        left:5vw;
+        font-size:2.5vw;
+    }
+
+    #search {
+        width:80vw;
+    }
+
+    input#searchbar {
+        width:74vw;
+    }
+
+    button#searchSubmit {
+        top:1vw;
+        width:5vw;
+        font-size:3vw;
+        top:0.1vw;
+        text-align:center;
+    }
+
+    /* resizing cards to fit 2 in a row as opposed to 3 */
+    .profcard {
+        width:34vw;
+    }
+
+    .profName {
+        font-size:3vw;
+    }
+
+    .quality, .difficulty {
+        width:13vw;
+        font-size:3vw;
+        padding-right:3vw;
+    }
+
+    .difficulty {padding-right:0;padding-left:3vw;}
+
+    .grade {font-size:3vw;margin-top:3vw;width:25vw;}
+    .grade:before {font-size:1.5vw;padding-top:2vw;}
+
+    .quality:before, .difficulty:before, .quality:after, .difficulty:after {
+        width:13vw;
+        margin-top:4vw;
+        font-size:1.5vw;
+        padding-right:3vw;
+    }
+
+    .difficulty:after {padding:0;margin-left:-1.5vw;}
+
+    .quality:after, .difficulty:after {
+        margin-top:2vw;
+    }
+
+}
+
+/* styling for responsiveness at screen sizes under 500px wide */
+@media only screen and (max-width: 500px) {
+
+    #title {
+        font-size:15vw;
+    }
+
+    input#searchbar {width:70vw;}
+
+    button#searchSubmit {
+        top:0vw;
+        margin:3vw 1vw;
+        font-size:5vw;
+        width:7vw;
+    }
+
+    #icon {width:6vw;height:6vw;}
+
+    button#infoButton {
+        width:6vw;
+        height:6vw;
+        line-height:6vw;
+    }
+
+    #info {
+        width:80vw;
+        left:5vw;
+        top:10vw;
+        font-size:4vw;
+    }
+
+    /* resizing to fit 1 card in a row as opposed to 2 */
+    #cards {
+        width:80vw;
+    }
+
+    .profcard {
+        width:74vw;
+    }
+
+    .profName {
+        font-size:6vw;
+    }
+
+    .quality, .difficulty {
+        width:13vw;
+        font-size:5vw;
+        padding: 3vw 3vw 6vw 0;
+    }
+
+    .difficulty {padding-right:0;padding-left:3vw;border-width:2px;}
+
+    .grade {font-size:5vw;margin-top:2vw;width:60vw;border-width:2px}
+    .grade:before {font-size:3vw;padding-top:3vw;}
+
+    .quality:before, .difficulty:before, .quality:after, .difficulty:after {
+        width:13vw;
+        margin-top:6vw;
+        font-size:3vw;
+        padding-right:3vw;
+    }
+
+    .difficulty:after {padding:0;margin-left:-1.5vw;}
+
+    .quality:after, .difficulty:after {
+        margin-top:3vw;
+    }
+
+}
+
+/* remove select outline */
+select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+}
