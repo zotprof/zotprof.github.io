@@ -33,7 +33,8 @@ hide_select = ["none"]  # for the select button, only none when prof name not fo
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    global teacherName, courses, course, count, teachers
+    global teacherName, courses, count, course, professors, teachers, qualities, difficulties, totals, grades, course_lists, chosens, d_displays, t_displays, hide_card, hide_select
+    # global teacherName, courses, course, count, teachers, course_lists
 
     # searching for teacher -> loads course dropdown
     if request.method == 'POST':
@@ -76,6 +77,8 @@ def home():
 # function for getting ratings for selected class
 @app.route('/<id>', methods=['POST'])
 def select_class(id):
+    global teacherName, courses, count, course, professors, teachers, qualities, difficulties, totals, grades, course_lists, chosens, d_displays, t_displays, hide_card, hide_select
+
     print("select_class()")
     print("id: ", id)
     print("course_lists:", course_lists)
@@ -115,6 +118,8 @@ def select_class(id):
 # function to delete a card
 @app.route('/delete', methods=['POST'])
 def delete_card():
+    global teacherName, courses, count, course, professors, teachers, qualities, difficulties, totals, grades, course_lists, chosens, d_displays, t_displays, hide_card, hide_select
+
     if request.method == 'POST':
         id = request.form.get('id')
         hide_card[int(id)] = "none"
@@ -124,6 +129,8 @@ def delete_card():
 # function to clear all cards
 @app.route('/clear', methods=['POST'])
 def clear_all():
+    global teacherName, courses, count, course, professors, teachers, qualities, difficulties, totals, grades, course_lists, chosens, d_displays, t_displays, hide_card, hide_select
+
     if request.method == 'POST':
         for i in range(count+1):
             hide_card[i] = "none"
