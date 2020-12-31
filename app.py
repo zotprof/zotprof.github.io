@@ -78,6 +78,7 @@ def home():
 def select_class(id):
     print("select_class()")
     print("id: ", id)
+    print("course_lists:", course_lists)
 
     id = int(id)
 
